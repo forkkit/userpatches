@@ -31,7 +31,7 @@ Main() {
 			echo -e "\n## nymea repo\ndeb http://repository.nymea.io buster main\n#deb-src http://repository.nymea.io buster main" | tee /etc/apt/sources.list.d/nymea.list
 			wget -qO - http://repository.nymea.io/repository-pubkey.gpg | apt-key add -
 			apt-get update
-			apt-get --yes --allow-unauthenticated install bluez docker.io nymea-networkmanager dirmngr
+			apt-get --yes --allow-unauthenticated install bluez docker.io nymea-networkmanager dirmngr p7zip-full
  
 			cp /tmp/overlay/nymea-networkmanager.conf /etc/nymea/nymea-networkmanager.conf
 			cp /tmp/overlay/deviceplane.sh /root/deviceplane.sh
@@ -50,7 +50,7 @@ Main() {
 			apt remove iptables -y 
 			apt install nftables -y
 
-			echo "0.1" > /root/version
+			echo "0.1.1" > /root/version
 
 			;;
 		bionic)

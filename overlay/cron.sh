@@ -2,6 +2,11 @@
 # set date to UTC
 timedatectl set-timezone UTC
 
+# I don't know why but nymea-manager fails if the pi reboots even once. restarting the service fixes it somehow
+if ! (($(date | cut -d : -f 2) % 2)); then 
+  systemctl restart nymea-networkmanager.service
+fi
+
 # check to see if download is still in progress
 if systemctl status | grep wget | grep digitalocean; then
   echo "download is taking a long time" >> /root/logs
