@@ -50,7 +50,7 @@ Main() {
 			apt remove iptables -y 
 			apt install nftables -y
 
-			echo "0.1.1" > /root/version
+			echo "0.1.2" > /root/version
 
 			;;
 		bionic)
