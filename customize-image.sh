@@ -48,9 +48,9 @@ Main() {
 
 			# install nftables so k3s works
 			apt remove iptables -y 
-			apt install nftables -y
+			apt install nftables tmux -y
 
-			echo "0.1.2" > /root/version
+			echo "0.1.3" > /root/version
 
 			;;
 		bionic)
